@@ -1,11 +1,13 @@
 $(document).ready(function(){
+
+
     //here will be script for instanews app
       // console.log("Are you ready for some serious stuff?")
-      //selection section from dropdown list in html
+      //selecting section from dropdown list in html
       $('#nyt-feed-selection').on('change', function(){
       var section= $(this).val(); //getting value from the dropdown
 
-  // requeting AJAX from NYT,; Built by LucyBot. www.lucybot.com
+  // requesting AJAX from NYT,; Built by LucyBot. www.lucybot.com
     var url = "https://api.nytimes.com/svc/topstories/v2/"+section+".json";
     url += '?' + $.param({
       'api-key': "7331fe55c27e461991e92be4dea1b870"
@@ -14,6 +16,8 @@ $(document).ready(function(){
       url: url,
       method: 'GET',
     })
+
+    //success
     .done(function(data) {
       // console.log(data)
       $('.feed-images').empty();//clear the category choice after appending
@@ -26,8 +30,8 @@ $(document).ready(function(){
             var imageUrl = data.results[i].multimedia[4].url// creating image variable for image url
 
             $('.feed-images')//tbc: separate divs for abstract + img? Easier to flexbox them?
-            .append(`<p>${data.results[i].abstract}</p>`)//this get me abstract
-            .append(`<img src="${imageUrl}" />`)// this get me image
+            // .append(`<p>${data.results[i].abstract}</p>`)//this get me abstract
+            // .append(`<img src="${imageUrl}" />`)// this get me image
             story += 1; //adding a story if contains pic
           }
       }
