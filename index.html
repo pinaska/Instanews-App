@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="./build/css/style.min.css">
     <title>Instanews App NYT</title>
 </head>
 <body>
@@ -13,13 +13,12 @@
         <div class="select-category">
             <p>Choose a selection:</p>
             <select name="" id="nyt-feed-selection" value="category">
-
+              <option value="category" selected>Select...</option>
               <option value="home">Home</option>
               <option value="opinion">Opinion</option>
               <option value="world">World</option>
               <option value="national">National</option>
               <option value="politics">Politics</option>
-              <option value="upshot">Upshot</option>
               <option value="nyregion">NYRegion</option>
               <option value="business">Busines</option>
               <option value="technology">Technology</option>
@@ -30,21 +29,23 @@
               <option value="books">Books</option>
               <option value="movies">Movies</option>
               <option value="theater">Theater</option>
-              <option value="sundayreview">Sundayreview</option>
               <option value="fashion">Fashion</option>
-              <option value="tmagazine">tmagazine</option>
-              <option value="food">food</option>
-              <option value="travel">travel</option>
-              <option value="magazine">magazine</option>
-              <option value="realestate">realestate</option>
-              <option value="automobiles">automobiles</option>
-              <option value="obituaries">obituaries</option>
-              <option value="insider">insider</option>
+              <option value="food">Food</option>
+              <option value="travel">Travel</option>
             </select>
         </div>
     </header>
     <section class="feed-images">
-
+      <ul class="stories-list">
+        <li class="story-list-item">
+          <a href="" class="link-back-nyt">
+            <div class="story-item">
+              <p class="story-item-text">
+              </p>
+            </div>
+          </a>
+        </li>
+      </ul>
     </section>
     <footer>
       <p>&copy; Copyright 2016 INSTANEWS</p>

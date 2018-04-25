@@ -27,11 +27,15 @@ $(document).ready(function(){
       for(var i=0; i<data.results.length && story<12; i++) {
         if (data.results[i].multimedia.length > 3)//checking if the story has a picture type:mediumThreeByTwo210(multimedia[4]), if yes, execute the code
           {
-            var imageUrl = data.results[i].multimedia[4].url// creating image variable for image url
+            var imageUrl = data.results[i].multimedia[4].url;// creating image variable for image url
+            var storyUrl = data.results[i].url;
+            var storyAbs = data.results[i].abstract;
 
             $('.feed-images')//tbc: separate divs for abstract + img? Easier to flexbox them?
-            // .append(`<p>${data.results[i].abstract}</p>`)//this get me abstract
-            // .append(`<img src="${imageUrl}" />`)// this get me image
+            .append("<p>" + storyAbs + "</p>")//this get me abstract
+            // .css("background-image", "url(" imageUrl ")");
+
+            .append('<img src=' + imageUrl+ '>')// this get me image
             story += 1; //adding a story if contains pic
           }
       }

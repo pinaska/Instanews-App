@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
   prettyError = require('gulp-prettyerror'),
-  // sass = require('gulp-sass'),
+  sass = require('gulp-sass'),
   autoprefixer = require('gulp-autoprefixer'),
   rename = require('gulp-rename'),
   cssnano = require('gulp-cssnano'),
@@ -10,37 +10,22 @@ var gulp = require('gulp'),
 
 // Create basic Gulp tasks
 
-// gulp.task('sass', function(done) {
-//   gulp
-//     .src('./sass/style.scss', { sourcemaps: true })
-//     .pipe(prettyError())
-//     .pipe(sass())
-//     .pipe(
-//       autoprefixer({
-//         browsers: ['last 2 versions']
-//       })
-//     )
-//     .pipe(gulp.dest('./build/css'))
-//     .pipe(cssnano())
-//     .pipe(rename('style.min.css'))
-//     .pipe(gulp.dest('./build/css'));
-//
-//   gulp
-//     .src('./sass/style-stretch.scss', { sourcemaps: true })
-//     .pipe(prettyError())
-//     .pipe(sass())
-//     .pipe(
-//       autoprefixer({
-//         browsers: ['last 2 versions']
-//       })
-//     )
-//     .pipe(gulp.dest('./build/css'))
-//     .pipe(cssnano())
-//     .pipe(rename('style-stretch.min.css'))
-//     .pipe(gulp.dest('./build/css'));
-//
-//   done();
-// });
+gulp.task('sass', function(done) {
+  gulp.src('./sass/*.scss', { sourcemaps: true })
+    .pipe(prettyError())
+    .pipe(sass())
+    .pipe(
+      autoprefixer({
+        browsers: ['last 2 versions']
+      })
+    )
+    .pipe(gulp.dest('./build/css'))
+    .pipe(cssnano())
+    .pipe(rename('style.min.css'))
+    .pipe(gulp.dest('./build/css'));
+
+  done();
+});
 
 gulp.task('lint', function() {
   return (gulp
@@ -76,14 +61,13 @@ gulp.task('browser-sync', function() {
     }
   });
 
-  gulp
-    .watch(['build/css/*.css', 'build/js/*.js'])
+  gulp.watch(['build/css/*.css', 'build/js/*.js'])
     .on('change', browserSync.reload);
 });
 
 gulp.task('watch', function() {
   gulp.watch('js/*.js', gulp.series('scripts'));
-  // gulp.watch('sass/*.scss', gulp.series('sass'));
+  gulp.watch('sass/*.scss', gulp.series('sass'));
 });
 
 gulp.task('default', gulp.parallel('browser-sync', 'watch'));
