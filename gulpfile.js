@@ -52,13 +52,14 @@ gulp.task(
   })
 );
 
-// Set-up BrowserSync and watch
+// Set-up BrowserSync and watch, not working with ubuntu terminal
 
 gulp.task('browser-sync', function() {
   browserSync.init({
     server: {
       baseDir: './'
-    }
+    },
+    open: false
   });
 
   gulp.watch(['build/css/*.css', 'build/js/*.js'])
@@ -70,4 +71,4 @@ gulp.task('watch', function() {
   gulp.watch('sass/*.scss', gulp.series('sass'));
 });
 
-gulp.task('default', gulp.parallel('browser-sync', 'watch'));
+gulp.task('default', gulp.parallel('watch', 'browser-sync'));

@@ -1,0 +1,66 @@
+//
+//base genral style
+//
+/*general styles*/
+body{
+	background-color: $main-color;
+	color: $text-color;
+	display: flex;
+	justify-content:center;
+  flex-flow: row wrap;
+	height: 100vh;
+	font-size: $font-size; /*16px*/;
+	font-family: 'Open Sans', sans-serif;
+}
+a{
+  text-decoration: none;
+  color: $text-color;
+}
+//HEADER
+header{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	height: 80vh;
+}
+
+//NYT FEED
+//ul
+.stories-list{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+//li
+.story-list-item{
+	flex-basis: 100%;
+  display: inline-block;
+	position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+.story-list-item a {
+  display: block;
+  height: 30rem;
+  width: inherit;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+//p with abstrackt
+.story-item-text{
+  bottom:0;
+  background: $main-color;
+  padding: 10px;
+  text-align: justify;
+  width: 100%;
+}
+
+//FOOTER
+footer{
+	padding-bottom: 1.875rem; /*30px*/
+}
+footer p{
+	color: $footer-color;
+}

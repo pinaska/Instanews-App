@@ -20,7 +20,7 @@ $(document).ready(function(){
     //success
     .done(function(data) {
       // console.log(data)
-      $('.feed-images').empty();//clear the category choice after appending
+      $('.stories-list').empty();//clear the category choice after appending
 
       var story=0;//entering the first result;
       //there should be max 12 stories, only with pics
@@ -31,11 +31,10 @@ $(document).ready(function(){
             var storyUrl = data.results[i].url;
             var storyAbs = data.results[i].abstract;
 
-            $('.feed-images')//tbc: separate divs for abstract + img? Easier to flexbox them?
-            .append("<p>" + storyAbs + "</p>")//this get me abstract
-            // .css("background-image", "url(" imageUrl ")");
+            // .append("<div>""<p>" + storyAbs + "</p>")//this get me abstract
+            // .append('<img src=' + imageUrl+ '>')// this get me image
 
-            .append('<img src=' + imageUrl+ '>')// this get me image
+             $(".stories-list").append('<li class="story-list-item"><a href="' + storyUrl + '" target="_blank" class="story-item" style="background: url(' + imageUrl + ')"><p class="story-item-text">'+ storyAbs+'</p></a></li>');
             story += 1; //adding a story if contains pic
           }
       }
