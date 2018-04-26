@@ -1,20 +1,16 @@
 //
 // main css style file
 //
-@import "_reset";
-@import "_variables";
-@import "_base";
-@import "_fonts";
-@import "_mixins";
+@import "reset";
+@import "variables";
+@import "mixins";
+@import "fonts";
+@import "base";
 
 
 /*MEDIA QUERIES*/
 @media(min-width: 600px){
-  header{
-    max-height: 10rem;
-    padding: 1rem;
-    flex-flow: nowrap;
-  }
+
   .nyt-logo {
     justify-content: flex-end;
 }
@@ -25,13 +21,8 @@
   header p{
         text-align: left;
   }
-  .story-list-item{
-    flex-basis: 33%;
+  footer p{
+    text-align: left;
   }
-}
 
-@media (min-width: 1000px){
-  .story-list-item{
-    flex-basis: 25%;
-  }
 }

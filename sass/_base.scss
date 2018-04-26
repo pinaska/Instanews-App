@@ -2,15 +2,23 @@
 //base genral style
 //
 /*general styles*/
+*{
+	box-sizing: border-box;
+}
+html{
+	height: 100%;
+}
+
 body{
 	background-color: $main-color;
 	color: $text-color;
 	display: flex;
 	justify-content:center;
   flex-flow: row wrap;
-	height: 100vh;
+	height: 100%;
 	font-size: $font-size; /*16px*/;
-	font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  cursor: pointer;
 }
 a{
   text-decoration: none;
@@ -19,13 +27,33 @@ a{
 //HEADER
 header{
 	display: flex;
-  align-self: flex-start;
 	flex-flow:row wrap;
 	justify-content: center;
   align-content: center;
-	// height: 80vh;
-  width: 100%;
+  width: 90vw;
+	padding-top: 30px;
+		@include tablet {
+		flex-wrap: nowrap;
+	}
 }
+//need to add class to make it smaller once the selection is clicked
+.header-smaller{
+	transition: all 1s ease-in-out 0.2s;
+	// background-color: deeppink;
+	padding: 1rem;
+		@include tablet {
+		flex: 1 0 auto;
+		height: 150px;
+		align-self: flex-start;
+		// flex-flow: nowrap;
+		}
+}
+// .header-smaller img{
+//
+// }
+// .header-smaller .select-category{
+// 	max-width: 250px;
+// }
 .select-category{
   margin: auto;
   display: flex;
@@ -42,6 +70,10 @@ header{
 }
 .nyt-logo{
   margin: 1rem 0;
+  transition: all 0.3s ease 1s;
+}
+.nyt-logo:hover{
+  margin: 0;
 }
 header p{
   padding: 1rem 0;
@@ -52,7 +84,7 @@ header p{
   width:100%;
 }
 //ul
-.stories-list{
+.story-list{
   display: flex;
   flex-flow: row wrap;
   width: 100%;
@@ -63,6 +95,14 @@ header p{
   display: inline-block;
 	position: relative;
   height: 30rem;
+
+  @include tablet{
+    flex-basis: 33%;
+  }
+
+  @include desktop{
+      flex-basis: 25%;
+    }
 }
 
 .story-list-item a {
@@ -72,16 +112,18 @@ header p{
 }
 
 //p with abstrackt
-.story-item-text{
+.story-item-text p{
   bottom:0;
   background: $main-color;
-  opacity: 0.6;
+  // opacity: 0.6;
   padding: 10px;
   text-align: center;
   font-weight: bolder;
   line-height: 1.5;
   position: absolute;
-
+	 &:hover{
+		 opacity:1;
+	 }
 }
 
 //FOOTER
