@@ -34,7 +34,7 @@ $(document).ready(function(){
             // .append("<div>""<p>" + storyAbs + "</p>")//this get me abstract
             // .append('<img src=' + imageUrl+ '>')// this get me image
 
-             $(".stories-list").append('<li class="story-list-item"><a href="' + storyUrl + '" target="_blank" class="story-item" style="background: url(' + imageUrl + ')"><p class="story-item-text">'+ storyAbs+'</p></a></li>');
+           $(".stories-list").append('<li class="story-list-item"><a href="' + storyUrl + '" target="_blank" class="story-item" style="background: url(' + imageUrl + ') no-repeat center/cover"><p class="story-item-text">'+ storyAbs+'</p></a></li>');
             story += 1; //adding a story if contains pic
           }
       }

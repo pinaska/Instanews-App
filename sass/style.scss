@@ -9,3 +9,29 @@
 
 
 /*MEDIA QUERIES*/
+@media(min-width: 600px){
+  header{
+    max-height: 10rem;
+    padding: 1rem;
+    flex-flow: nowrap;
+  }
+  .nyt-logo {
+    justify-content: flex-end;
+}
+.select-category{
+    justify-content: flex-start;
+    flex-flow: row wrap
+  }
+  header p{
+        text-align: left;
+  }
+  .story-list-item{
+    flex-basis: 33%;
+  }
+}
+
+@media (min-width: 1000px){
+  .story-list-item{
+    flex-basis: 25%;
+  }
+}

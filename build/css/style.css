@@ -72,14 +72,48 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  height: 80vh; }
+  -ms-flex-line-pack: center;
+      align-content: center;
+  width: 100%; }
+
+.select-category {
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  text-align: center;
+  padding: 1rem; }
+
+.select-category p {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%; }
+
+.nyt-logo, .select-category {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%; }
+
+.nyt-logo {
+  margin: 1rem 0; }
+
+header p {
+  padding: 1rem 0; }
+
+.feed-images {
+  width: 100%; }
 
 .stories-list {
   display: -webkit-box;
@@ -96,29 +130,27 @@ header {
       flex-basis: 100%;
   display: inline-block;
   position: relative;
-  height: 400px;
-  width: 100%; }
+  height: 30rem; }
 
 .story-list-item a {
   display: block;
   height: 30rem;
-  width: inherit;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat; }
+  width: inherit; }
 
 .story-item-text {
   bottom: 0;
   background: #000;
+  opacity: 0.6;
   padding: 10px;
-  text-align: justify;
-  width: 100%; }
+  text-align: center;
+  font-weight: bolder;
+  line-height: 1.5;
+  position: absolute; }
 
 footer {
-  padding-bottom: 1.875rem;
-  /*30px*/ }
-
-footer p {
+  margin: auto;
+  padding: 1.875rem;
+  /*30px*/
   color: #c2c2c2; }
 
 /*fonts*/
@@ -138,3 +170,31 @@ footer p {
   font-style: normal; }
 
 /*MEDIA QUERIES*/
+@media (min-width: 600px) {
+  header {
+    max-height: 10rem;
+    padding: 1rem;
+    -ms-flex-flow: nowrap;
+        flex-flow: nowrap; }
+  .nyt-logo {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
+  .select-category {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row wrap;
+            flex-flow: row wrap; }
+  header p {
+    text-align: left; }
+  .story-list-item {
+    -ms-flex-preferred-size: 33%;
+        flex-basis: 33%; } }
+
+@media (min-width: 1000px) {
+  .story-list-item {
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%; } }
