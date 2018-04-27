@@ -111,11 +111,23 @@ header {
     header {
       -ms-flex-wrap: nowrap;
           flex-wrap: nowrap; } }
+  header p {
+    padding: 1rem 0; }
+
+#loading-image {
+  background: url("../../assets/images/ajax-loader.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  display: inline-block; }
 
 .header-smaller {
-  -webkit-transition: all 1s ease-in-out 0.2s;
-  transition: all 1s ease-in-out 0.2s;
-  padding: 1rem; }
+  -webkit-transition: all 1s ease-in 0.2s;
+  transition: all 1s ease-in 0.2s;
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8); }
   @media (min-width: 600px) {
     .header-smaller {
       -webkit-box-flex: 1;
@@ -137,25 +149,18 @@ header {
       flex-wrap: wrap;
   text-align: center;
   padding: 1rem; }
-
-.select-category p {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%; }
+  .select-category p {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%; }
 
 .nyt-logo, .select-category {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%; }
 
 .nyt-logo {
-  margin: 1rem 0;
-  -webkit-transition: all 0.3s ease 1s;
-  transition: all 0.3s ease 1s; }
-
-.nyt-logo:hover {
-  margin: 0; }
-
-header p {
-  padding: 1rem 0; }
+  margin: 1rem 0; }
+  .nyt-logo:hover {
+    margin: 0; }
 
 .feed-images {
   width: 100%; }
@@ -175,7 +180,17 @@ header p {
       flex-basis: 100%;
   display: inline-block;
   position: relative;
-  height: 30rem; }
+  -webkit-transition-property: height;
+  transition-property: height;
+  -webkit-transition-duration: 1s;
+          transition-duration: 1s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease; }
+  .story-list-item a {
+    display: block;
+    height: 30rem; }
+  .story-list-item:hover {
+    height: 20rem; }
   @media (min-width: 600px) {
     .story-list-item {
       -ms-flex-preferred-size: 33%;
@@ -185,21 +200,16 @@ header p {
       -ms-flex-preferred-size: 25%;
           flex-basis: 25%; } }
 
-.story-list-item a {
-  display: block;
-  height: 30rem;
-  width: inherit; }
-
-.story-item-text p {
+.story-item-text {
   bottom: 0;
   background: #000;
+  opacity: 0.7;
   padding: 10px;
   text-align: center;
   font-weight: bolder;
   line-height: 1.5;
-  position: absolute; }
-  .story-item-text p:hover {
-    opacity: 1; }
+  position: absolute;
+  width: 100%; }
 
 footer {
   margin: auto;

@@ -39,7 +39,7 @@ $('#loading-image').hide();
             // .append("<div>""<p>" + storyAbs + "</p>")//this get me abstract
             // .append('<img src=' + imageUrl+ '>')// this get me image
 
-           $(".story-list").append('<li class="story-list-item"><a href="' + storyUrl + '" target="_blank" class="story-item" style="background: url(' + imageUrl + ') no-repeat center/cover"><p class="story-item-text" style="opacity:0">'+ storyAbs+'</p></a></li>');
+           $(".story-list").append('<li class="story-list-item"><a href="' + storyUrl + '" target="_blank" class="story-item" style="background: url(' + imageUrl + ') no-repeat center/cover"><p class="story-item-text">'+ storyAbs+'</p></a></li>');
             story += 1; //adding a story if contains pic
           }
       }

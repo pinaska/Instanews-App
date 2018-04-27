@@ -35,25 +35,31 @@ header{
 		@include tablet {
 		flex-wrap: nowrap;
 	}
+	& p{
+	  padding: 1rem 0;
+	}
+}
+#loading-image{
+background: url('../../assets/images/ajax-loader.gif');
+background-size: contain;
+background-repeat: no-repeat;
+width: 100px;
+height: 100px;
+margin: 20px;
+display:inline-block;
 }
 //need to add class to make it smaller once the selection is clicked
 .header-smaller{
-	transition: all 1s ease-in-out 0.2s;
-	// background-color: deeppink;
-	padding: 1rem;
+	transition: all 1s ease-in 0.2s;
+	transform: scale(.8);
+	// padding: 1rem;
 		@include tablet {
 		flex: 1 0 auto;
 		height: 150px;
 		align-self: flex-start;
-		// flex-flow: nowrap;
 		}
 }
-// .header-smaller img{
-//
-// }
-// .header-smaller .select-category{
-// 	max-width: 250px;
-// }
+
 .select-category{
   margin: auto;
   display: flex;
@@ -61,22 +67,20 @@ header{
   flex-wrap: wrap;
   text-align: center;
   padding: 1rem;
+	& p{
+		flex-basis: 100%;
+	}
 }
-.select-category p{
-  flex-basis: 100%;
-}
+
 .nyt-logo, .select-category{
   flex-basis: 100%;
 }
 .nyt-logo{
   margin: 1rem 0;
-  transition: all 0.3s ease 1s;
-}
-.nyt-logo:hover{
-  margin: 0;
-}
-header p{
-  padding: 1rem 0;
+  // transition: all 0.3s ease 1s;
+	&:hover{
+		  margin: 0;
+	}
 }
 
 //NYT FEED
@@ -94,7 +98,17 @@ header p{
 	flex-basis: 100%;
   display: inline-block;
 	position: relative;
-  height: 30rem;
+	transition-property: height;
+	transition-duration: 1s;
+	transition-timing-function: ease;
+	& a {
+		display: block;
+		height: 30rem;
+	}
+
+	&:hover{
+		height: 20rem;
+	}
 
   @include tablet{
     flex-basis: 33%;
@@ -105,25 +119,17 @@ header p{
     }
 }
 
-.story-list-item a {
-  display: block;
-  height: 30rem;
-  width: inherit;
-}
-
 //p with abstrackt
-.story-item-text p{
+.story-item-text{
   bottom:0;
   background: $main-color;
-  // opacity: 0.6;
+  opacity: 0.7;
   padding: 10px;
   text-align: center;
   font-weight: bolder;
   line-height: 1.5;
   position: absolute;
-	 &:hover{
-		 opacity:1;
-	 }
+	width: 100%;
 }
 
 //FOOTER
