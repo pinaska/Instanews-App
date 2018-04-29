@@ -1,9 +1,8 @@
 $(document).ready(function(){
-$('#loading-image').hide();
+      $('#loading-image').hide();
       //selecting section from dropdown list in html
       $('#nyt-feed-selection').on('change', function(){
-      var section= $(this).val(); //getting value from the dropdown
-
+        var section= $(this).val(); //getting value from the dropdown
         $('header').addClass('header-smaller');
         //to get header with the added class
 
@@ -13,7 +12,6 @@ $('#loading-image').hide();
     url += '?' + $.param({
       'api-key': "7331fe55c27e461991e92be4dea1b870"
     });
-    // .append('<img src="../../assets/images/ajax-loader.gif"/>') //adding loading gif
     $('#loading-image').show();
     $.ajax({
       url: url,
@@ -26,21 +24,20 @@ $('#loading-image').hide();
       // console.log(data)
       $('.story-list').empty();//clear the category choice after appending
       $('#loading-image').hide();
+      $('header').css("margin-top", "0");
 
       var story=0;//entering the first result;
       //there should be max 12 stories, only with pics
       for(var i=0; i<data.results.length && story<12; i++) {
         if (data.results[i].multimedia.length > 3)//checking if the story has a picture type:mediumThreeByTwo210(multimedia[4]), if yes, execute the code
           {
-            var imageUrl = data.results[i].multimedia[4].url;// creating image variable for image url
+            var imageUrl = data.results[i].multimedia[4].url;
             var storyUrl = data.results[i].url;
             var storyAbs = data.results[i].abstract;
 
-            // .append("<div>""<p>" + storyAbs + "</p>")//this get me abstract
-            // .append('<img src=' + imageUrl+ '>')// this get me image
 
            $(".story-list").append('<li class="story-list-item"><a href="' + storyUrl + '" target="_blank" class="story-item" style="background: url(' + imageUrl + ') no-repeat center/cover"><p class="story-item-text">'+ storyAbs+'</p></a></li>');
-            story += 1; //adding a story if contains pic
+            story += 1;
           }
       }
     })//end of success
