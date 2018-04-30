@@ -119,9 +119,8 @@ header {
     padding: 1rem 0; }
 
 .loading-image {
-  margin: 0 auto; }
-  .loading-image img {
-    max-width: 100px; }
+  margin: 0 auto;
+  max-width: 100px; }
 
 .header-smaller {
   -webkit-transition: all 1s ease-in 0.2s;
@@ -173,18 +172,10 @@ header {
   -ms-flex-preferred-size: 100%;
       flex-basis: 100%;
   display: inline-block;
-  position: relative;
-  -webkit-transition-property: height;
-  transition-property: height;
-  -webkit-transition-duration: 1s;
-          transition-duration: 1s;
-  -webkit-transition-timing-function: ease;
-          transition-timing-function: ease; }
+  position: relative; }
   .story-list-item a {
     display: block;
     height: 30rem; }
-  .story-list-item:hover {
-    height: 20rem; }
   @media (min-width: 600px) {
     .story-list-item {
       -webkit-box-flex: 1;

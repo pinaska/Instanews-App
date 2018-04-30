@@ -43,9 +43,7 @@ header{
 }
 .loading-image{
 	margin: 0 auto;
-	 img {
-		 max-width: 100px;
-	}
+	max-width: 100px;
 }
 .header-smaller{
 	transition: all 1s ease-in 0.2s;
@@ -79,7 +77,6 @@ header{
   width:100%;
 	margin-bottom: 20px;
 }
-//ul
 .story-list{
   display: flex;
   flex-flow: row wrap;
@@ -89,17 +86,10 @@ header{
 	flex-basis: 100%;
   display: inline-block;
 	position: relative;
-	transition-property: height;
-	transition-duration: 1s;
-	transition-timing-function: ease;
-		 a {
+		a {
 			display: block;
 			height: 30rem;
 		}
-		&:hover{
-			height: 20rem;
-		}
-
 	  @include tablet{
 	    flex: 1 1 calc(33.33% - 20px);//need to get rid of unnecessary margin on the right; src:https://stackoverflow.com/questions/45057867/flex-items-not-respecting-margins-and-box-sizing-border-box
 	  }
