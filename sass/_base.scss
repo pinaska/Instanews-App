@@ -37,7 +37,7 @@ header{
 		@include tablet {
 		flex-wrap: nowrap;
 	}
-	& p{
+	 p{
 	  padding: 1rem 0;
 	}
 }
@@ -48,8 +48,10 @@ header{
 .header-smaller{
 	transition: all 1s ease-in 0.2s;
 	transform: scale(.7);
-	& nyt-logo
 }
+// .header-smaller nyt-logo{
+// 	max-height:100px;
+//  }
 
 .select-category{
   margin: auto;
