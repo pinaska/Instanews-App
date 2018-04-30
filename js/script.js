@@ -22,7 +22,7 @@ $(document).ready(function(){
     //success
     .done(function(data) {
       // console.log(data)
-      $('.story-list').empty();//clear the category choice after appending
+      $('.story-list').empty();
       $('#loading-image').hide();
       $('header').css("margin-top", "0");
 
@@ -48,6 +48,5 @@ $(document).ready(function(){
       throw err;
     });//end of error
 
-  });// end of '#nyt-feed-selection').on 'change' function
-      //copy-pasted from NYT
+  });// end of $('#nyt-feed-selection').on 'change'function
 });//end of document.ready

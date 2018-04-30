@@ -1,28 +1,9 @@
 //
 // main css style file
 //
-@import "reset";
-@import "variables";
-@import "mixins";
-@import "fonts";
-@import "base";
+@import "_partials_sass/_reset";
+@import "_partials_sass/_variables";
+@import "_partials_sass/_mixins";
+@import "_partials_sass/_fonts";
+@import "_partials_sass/_base";
 
-
-/*MEDIA QUERIES*/
-@media(min-width: 600px){
-
-  .nyt-logo {
-    justify-content: flex-end;
-}
-.select-category{
-    justify-content: flex-start;
-    flex-flow: row wrap
-  }
-  header p{
-        text-align: left;
-  }
-  footer p{
-    text-align: left;
-  }
-
-}
