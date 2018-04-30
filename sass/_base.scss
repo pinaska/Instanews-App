@@ -32,7 +32,7 @@ header{
 	display: flex;
 	flex-flow:row wrap;
 	justify-content: center;
-  align-content: center;
+	align-content: center;
 	margin-top: 25vh;
 		@include tablet {
 		flex-wrap: nowrap;
@@ -49,9 +49,6 @@ header{
 	transition: all 1s ease-in 0.2s;
 	transform: scale(.7);
 }
-// .header-smaller nyt-logo{
-// 	max-height:100px;
-//  }
 
 .select-category{
   margin: auto;
@@ -66,8 +63,9 @@ header{
 }
 
 .nyt-logo, .select-category{
-  flex-basis: 100%;
+	flex-basis: 100%;
 }
+
 .feed-images{
   width:100%;
 	margin-bottom: 20px;
