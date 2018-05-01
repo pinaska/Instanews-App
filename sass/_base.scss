@@ -2,7 +2,7 @@
 //base general style
 //
 /*general styles*/
-*{
+* {
 	box-sizing: border-box;
 }
 html{
@@ -44,10 +44,16 @@ header{
 .loading-image{
 	margin: 0 auto;
 	max-width: 100px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	z-index: 10;
 }
 .header-smaller{
 	transition: all 1s ease-in 0.2s;
 	transform: scale(.7);
+	margin-top: 0;
 	@include tablet {
 		max-height: 150px;
 	}
@@ -91,7 +97,7 @@ header{
 			height: 30rem;
 		}
 	  @include tablet{
-	    flex: 1 1 calc(33.33% - 20px);//need to get rid of unnecessary margin on the right; src:https://stackoverflow.com/questions/45057867/flex-items-not-respecting-margins-and-box-sizing-border-box
+	    flex: 1 1 calc(33.33% - 10px);//need to get rid of unnecessary margin on the right; src:https://stackoverflow.com/questions/45057867/flex-items-not-respecting-margins-and-box-sizing-border-box
 	  }
 
 	  @include desktop{

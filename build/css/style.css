@@ -120,13 +120,20 @@ header {
 
 .loading-image {
   margin: 0 auto;
-  max-width: 100px; }
+  max-width: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 10; }
 
 .header-smaller {
   -webkit-transition: all 1s ease-in 0.2s;
   transition: all 1s ease-in 0.2s;
   -webkit-transform: scale(0.7);
-          transform: scale(0.7); }
+          transform: scale(0.7);
+  margin-top: 0; }
   @media (min-width: 600px) {
     .header-smaller {
       max-height: 150px; } }
@@ -179,8 +186,8 @@ header {
   @media (min-width: 600px) {
     .story-list-item {
       -webkit-box-flex: 1;
-          -ms-flex: 1 1 calc(33.33% - 20px);
-              flex: 1 1 calc(33.33% - 20px); } }
+          -ms-flex: 1 1 calc(33.33% - 10px);
+              flex: 1 1 calc(33.33% - 10px); } }
   @media (min-width: 1000px) {
     .story-list-item {
       -ms-flex-preferred-size: 25%;
