@@ -118,7 +118,7 @@ header {
   header p {
     padding: 1rem 0; }
 
-.loading-image {
+.loading img {
   margin: 0 auto;
   max-width: 100px;
   position: absolute;
