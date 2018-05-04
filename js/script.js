@@ -1,8 +1,9 @@
 $(document).ready(function(){
-      $('#loading-image').hide();
+      // $('#loading-image').hide();
       //selecting section from dropdown list in html
       $('#nyt-feed-selection').on('change', function(){
         var section= $(this).val(); //getting value from the dropdown
+        $('header').before('<div class ="loading"><img src="assets/images/ajax-loader.gif"> </div>'); 
         $('header').addClass('header-smaller');
         //to get header with the added class
 
@@ -12,7 +13,7 @@ $(document).ready(function(){
     url += '?' + $.param({
       'api-key': '7331fe55c27e461991e92be4dea1b870'
     });
-    $('#loading-image').show();
+    // $('#loading-image').show();
     $.ajax({
       url: url,
       method: 'GET',
@@ -22,7 +23,7 @@ $(document).ready(function(){
     //success
     .done(function(data) {
       $('.story-list').empty();
-      $('#loading-image').hide();
+      // $('#loading-image').hide();
     
 
       var story=0;//entering the first result;
@@ -45,7 +46,11 @@ $(document).ready(function(){
     //error
     .fail(function() {
       $('.story-list').append('<p>Sorry, it appears there is a problem. Try agai later</p>');
-    });//end of error
+    })//end of error
+
+    .always(function (){        
+      $('.loading').remove();
+    });
 
   });// end of $('#nyt-feed-selection').on 'change'function
 });//end of document.ready
