@@ -6,7 +6,17 @@ var gulp = require('gulp'),
   cssnano = require('gulp-cssnano'),
   uglify = require('gulp-uglify'),
   eslint = require('gulp-eslint'),
-  browserSync = require('browser-sync');
+  browserSync = require('browser-sync'),
+  babel = require('gulp-babel');
+
+  // gulp.task('babel', () => {
+  //   return gulp
+  //     .src('js/script.js')
+  //     .pipe(babel({
+  //       presets:['env']
+  //     }))
+  //     .pipe(gulp.dest('build/js/babel'));
+  // }); 
 
 // Create basic Gulp tasks
 
@@ -42,6 +52,9 @@ gulp.task(
   gulp.series('lint', function() {
     return gulp
       .src('./js/*.js')
+      .pipe(babel({
+        presets:['env']
+      }))
       .pipe(uglify())
       .pipe(
         rename({
