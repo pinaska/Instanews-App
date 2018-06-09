@@ -45,7 +45,7 @@ $(document).ready(function(){
 
     //error
     .fail(function() {
-      $('.story-list').append('<p>Sorry, it appears there is a problem. Try agai later</p>');
+      $('.story-list').append('<p>Sorry, it appears there is a problem. Try again later</p>');
     });//end of error
 
   });// end of $('#nyt-feed-selection').on 'change'function
